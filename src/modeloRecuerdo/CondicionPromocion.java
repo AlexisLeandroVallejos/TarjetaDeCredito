@@ -10,13 +10,13 @@ public class CondicionPromocion extends CondicionRecuerdo {
 	
 	public void comprar(int monto, ClientePosta clientePosta) {
 		if(esMontoMayorA(monto)) {
-			clientePosta.darPuntos();
+			clientePosta.darPuntos(monto/MONTO_PARA_PROMOCION);
 		}
 		super.comprar(monto, clientePosta);
 	}
 
 	public boolean esMontoMayorA(int monto) {
-		return monto > MONTO_PARA_PROMOCION;
+		return monto >= MONTO_PARA_PROMOCION;
 	}
 	
 }

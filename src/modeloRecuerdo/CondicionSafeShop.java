@@ -16,6 +16,6 @@ public class CondicionSafeShop extends CondicionRecuerdo {
 	}
 
 	public boolean esMontoMayorAMaximoLimiteCompra(int monto, ClientePosta clientePosta) {
-		return monto > clientePosta.getMaximoLimiteCompra();
+		return monto >= clientePosta.getMaximoLimiteCompra();
 	}
 }
