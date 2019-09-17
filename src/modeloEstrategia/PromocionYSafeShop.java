@@ -12,17 +12,17 @@ public class PromocionYSafeShop implements Estrategia {
 			throw new MaximoLimiteCompraException();
 		}
 		if(esMontoMayorA(monto)) {
-			clientePosta.darPuntos();
+			clientePosta.darPuntos(monto/MONTO_PARA_PROMOCION);
 		}
 		clientePosta.disminuirCredito(monto);
 	}
 
 	public boolean esMontoMayorAlLimiteMaximoDeCompra(int monto, ClientePosta clientePosta) {
-		return monto > clientePosta.getMaximoLimiteCompra();
+		return monto >= clientePosta.getMaximoLimiteCompra();
 	}
 
 	public boolean esMontoMayorA(int monto) {
-		return monto > MONTO_PARA_PROMOCION;
+		return monto >= MONTO_PARA_PROMOCION;
 	}
 
 	@Override

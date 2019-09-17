@@ -13,7 +13,7 @@ public class SafeShop implements Estrategia {
 	}
 
 	public boolean esMontoMayorAlLimiteMaximoDeCompra(int monto, ClientePosta clientePosta) {
-		return monto > clientePosta.getMaximoLimiteCompra();
+		return monto >= clientePosta.getMaximoLimiteCompra();
 	}
 
 	@Override

@@ -11,13 +11,13 @@ public class AdheridoAPromocion implements Estado {
 	
 	public void comprar(int monto, ClientePosta cliente) {
 		if(esMontoMayorA(monto)) {
-			cliente.darPuntos();
+			cliente.darPuntos(monto/MONTO_PARA_PROMOCION);
 		}
 		cliente.disminuirCredito(monto);
 	}
 
 	public boolean esMontoMayorA(int monto) {
-		return monto > MONTO_PARA_PROMOCION;
+		return monto >= MONTO_PARA_PROMOCION;
 	}
 	
 	@Override

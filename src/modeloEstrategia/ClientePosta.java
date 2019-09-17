@@ -27,8 +27,8 @@ public class ClientePosta implements Cliente {
 		estrategia.pagarVencimiento(monto, this);
 	}
 
-	public void darPuntos() {
-		puntos += PUNTOS_PARA_PROMOCION;
+	public void darPuntos(int cantidadDeVeces) {
+		puntos += PUNTOS_PARA_PROMOCION * cantidadDeVeces;
 	}
 
 	public void disminuirCredito(int monto) {
@@ -37,6 +37,18 @@ public class ClientePosta implements Cliente {
 
 	public int getMaximoLimiteCompra() {
 		return MAXIMO_LIMITE_COMPRA;
+	}
+
+	public void setCreditoDisponible(int creditoDisponible) {
+		this.creditoDisponible = creditoDisponible;
+	}
+
+	public int getCreditoDisponible() {
+		return creditoDisponible;
+	}
+
+	public int getPuntos() {
+		return puntos;
 	}
 
 }

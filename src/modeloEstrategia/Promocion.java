@@ -7,13 +7,13 @@ public class Promocion implements Estrategia {
 	@Override
 	public void comprar(int monto, ClientePosta clientePosta) {
 		if(esMontoMayorA(monto)) {
-			clientePosta.darPuntos();
+			clientePosta.darPuntos(monto/MONTO_PARA_PROMOCION);
 		}
 		clientePosta.disminuirCredito(monto);
 	}
 
 	public boolean esMontoMayorA(int monto) {
-		return monto > MONTO_PARA_PROMOCION;
+		return monto >= MONTO_PARA_PROMOCION;
 	}
 
 	@Override
