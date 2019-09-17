@@ -43,4 +43,12 @@ public class ClientePosta implements Cliente {
 		creditoDisponible -= monto;
 	}
 
+	public int getCreditoDisponible() {
+		return creditoDisponible;
+	}
+
+	public void setCreditoDisponible(int creditoDisponible) {
+		this.creditoDisponible = creditoDisponible;
+	}
+
 }

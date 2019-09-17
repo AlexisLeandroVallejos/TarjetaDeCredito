@@ -18,7 +18,7 @@ public class AdheridoASafeShop implements Estado {
 	}
 
 	public boolean esMontoMayorAlLimiteMaximoDeCompra(int monto, ClientePosta cliente) {
-		return monto > cliente.getMaximoLimiteCompra();
+		return monto >= cliente.getMaximoLimiteCompra();
 	}
 
 	@Override
