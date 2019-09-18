@@ -1,12 +1,8 @@
 package modeloRecuerdo;
 
-public class CondicionPromocion extends CondicionRecuerdo {
+public class CondicionPromocion extends CondicionComercial {
 	
 	private static final int MONTO_PARA_PROMOCION = 50;
-	
-	public CondicionPromocion(ClientePosta clientePosta) {
-		super(clientePosta);
-	}
 	
 	public void comprar(int monto, ClientePosta clientePosta) {
 		if(esMontoMayorA(monto)) {

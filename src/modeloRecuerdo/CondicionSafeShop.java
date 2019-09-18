@@ -2,11 +2,7 @@ package modeloRecuerdo;
 
 import exceptions.MaximoLimiteCompraException;
 
-public class CondicionSafeShop extends CondicionRecuerdo {
-	
-	public CondicionSafeShop(ClientePosta clientePosta) {
-		super(clientePosta);
-	}
+public class CondicionSafeShop extends CondicionComercial {
 
 	public void comprar(int monto, ClientePosta clientePosta) {
 		if(esMontoMayorAMaximoLimiteCompra(monto, clientePosta)) {

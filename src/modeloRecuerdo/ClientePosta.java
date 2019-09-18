@@ -5,24 +5,31 @@ import java.util.List;
 
 public class ClientePosta implements Cliente {
 	
+	//Este seria mi Originator/Creador de recuerdos.
+	
 	private static final int PUNTOS_PARA_PROMOCION = 15;
 	private static final int MAXIMO_LIMITE_COMPRA = 1000;
+	
 	private int puntos;
 	private int creditoDisponible;
+	private List<CondicionComercial> condiciones = new ArrayList<CondicionComercial>();
 	
-	private List<CondicionRecuerdo> recuerdos = new ArrayList<CondicionRecuerdo>();
-	
-	public void agregar(CondicionRecuerdo recuerdo) {
-		recuerdos.add(recuerdo);
+	public Recuerdo guardarClienteEnRecuerdo() {
+		return new Recuerdo(this.puntos, this.creditoDisponible);
 	}
 	
-	public CondicionRecuerdo obtener(int lugar) {
-		return recuerdos.get(lugar);
+	public void deshacerClienteEnRecuerdo(Recuerdo recuerdo) {
+		this.puntos = recuerdo.getPuntos();
+		this.creditoDisponible = recuerdo.getCreditoDisponible();
+	}
+	
+	public void agregarCondicionComercial(CondicionComercial condicion) {
+		condiciones.add(condicion);
 	}
 	
 	@Override
 	public void comprar(int monto) {
-		recuerdos.forEach(recuerdo -> recuerdo.comprar(monto, this));
+		condiciones.forEach(condicion -> condicion.comprar(monto, this));
 	}
 
 	@Override
