@@ -2,7 +2,7 @@ package modeloDecorador;
 
 public class DecoradorDeCliente implements Cliente {
 	
-	protected Cliente cliente;
+	private Cliente cliente;
 	
 	public DecoradorDeCliente(Cliente cliente) {
 		this.cliente = cliente;
