@@ -6,7 +6,7 @@ import java.util.List;
 public class CuidadorDeRecuerdos {
 	
 	private List<Recuerdo> recuerdos = new ArrayList<Recuerdo>();
-	
+
 	public Recuerdo obtenerRecuerdo(int indice) {
 		return recuerdos.get(indice);
 	}
@@ -14,5 +14,10 @@ public class CuidadorDeRecuerdos {
 	public void agregarRecuerdo(Recuerdo recuerdo) {
 		recuerdos.add(recuerdo);
 	}
+	
+	public Recuerdo recuperacionAnteProteccionSafeShop() {
+		return recuerdos.get(recuerdos.size() - 1);
+	}
+	
 
 }

@@ -9,6 +9,7 @@ public class CondicionPromocion extends CondicionComercial {
 			clientePosta.darPuntos(monto/MONTO_PARA_PROMOCION);
 		}
 		super.comprar(monto, clientePosta);
+		
 	}
 
 	public boolean esMontoMayorA(int monto) {

@@ -13,7 +13,16 @@ public class ClientePosta implements Cliente {
 	private int puntos;
 	private int creditoDisponible;
 	private List<CondicionComercial> condiciones = new ArrayList<CondicionComercial>();
+	private CuidadorDeRecuerdos cuidador;
 	
+	public ClientePosta(CuidadorDeRecuerdos cuidador){
+		this.cuidador = cuidador;
+	}
+	
+	public CuidadorDeRecuerdos getCuidador() {
+		return cuidador;
+	}
+
 	public Recuerdo guardarClienteEnRecuerdo() {
 		return new Recuerdo(this.puntos, this.creditoDisponible);
 	}
@@ -59,6 +68,10 @@ public class ClientePosta implements Cliente {
 
 	public int getPuntos() {
 		return puntos;
+	}
+
+	public List<CondicionComercial> getCondiciones() {
+		return condiciones;
 	}
 
 }
