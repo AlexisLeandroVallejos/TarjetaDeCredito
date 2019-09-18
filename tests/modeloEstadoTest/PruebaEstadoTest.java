@@ -69,7 +69,7 @@ public class PruebaEstadoTest {
 		//agrego atributos al cliente
 		cliente.setCreditoDisponible(2000);
 		cliente.comprar(49);
-		Assert.assertEquals("No se sumaron puntos", 0, cliente.getPuntos());
+		Assert.assertEquals("Se sumaron puntos", 0, cliente.getPuntos());
 	}
 	
 	@Test
@@ -82,7 +82,7 @@ public class PruebaEstadoTest {
 		//agrego atributos al cliente
 		cliente.setCreditoDisponible(2000);
 		cliente.comprar(49);
-		Assert.assertEquals("No se sumaron puntos", 2000-49, cliente.getCreditoDisponible());
+		Assert.assertEquals("No se desconto credito", 2000-49, cliente.getCreditoDisponible());
 	}
 	
 	@Test
@@ -95,7 +95,7 @@ public class PruebaEstadoTest {
 		//agrego atributos al cliente
 		cliente.setCreditoDisponible(2000);
 		cliente.comprar(49);
-		Assert.assertEquals("No se sumaron puntos", 0, cliente.getPuntos());
+		Assert.assertEquals("Se sumaron puntos", 0, cliente.getPuntos());
 	}
 	
 	@Test
@@ -134,7 +134,7 @@ public class PruebaEstadoTest {
 		//agrego atributos al cliente
 		cliente.setCreditoDisponible(2000);
 		cliente.comprar(49);
-		Assert.assertEquals("No se sumaron puntos", 2000-49, cliente.getCreditoDisponible());
+		Assert.assertEquals("No se desconto credito", 2000-49, cliente.getCreditoDisponible());
 	}
 	
 	@Test(expected=MaximoLimiteCompraException.class)
